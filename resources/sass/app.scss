@@ -1,0 +1,28 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background-color: #b2b2b2;
+}
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #ffffff !important;
+}
+
+.active a{
+    color: #ffffff !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.overdue {
+    background-color: #FF4136;
+}
