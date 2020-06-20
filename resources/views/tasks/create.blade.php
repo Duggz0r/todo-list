@@ -30,8 +30,13 @@
             <select name="category" id="category" class="form-control mb-3" required>
                 <option value="" disabled hidden>Select category</option>
                 @foreach($categories as $category)
-                    <option
-                        value="{{ $category->id }}" {{ $task->category_id == $category->id ? 'selected' : '' }}>{{ $category->title }}</option>
+                    @if($task && $task->category_id == $category->id)
+                        <option
+                            value="{{ $category->id }}" selected>{{ $category->title }}</option>
+                    @else
+                        <option
+                            value="{{ $category->id }}">{{ $category->title }}</option>
+                    @endif
                 @endforeach
             </select>
 
