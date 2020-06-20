@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="23eeaa7f-53fa-4d4d-975f-b4d065fe397d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/TableDraggable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tasks/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tasks/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/TableDraggable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/TableDraggable.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +154,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592569673685</updated>
-      <workItem from="1592569675266" duration="29659000" />
+      <workItem from="1592569675266" duration="31336000" />
     </task>
     <servers />
   </component>
@@ -186,10 +181,10 @@
     </state>
     <state x="386" y="218" width="667" height="486" key="find.popup/0.22.1440.878@0.22.1440.878" timestamp="1592587580185" />
     <state x="386" y="218" width="667" height="486" key="find.popup/1440.22.2560.1058/0.22.1440.878@0.22.1440.878" timestamp="1592668797010" />
-    <state x="385" y="212" width="670" height="676" key="search.everywhere.popup" timestamp="1592676378850">
+    <state x="385" y="212" width="670" height="676" key="search.everywhere.popup" timestamp="1592682116279">
       <screen x="0" y="22" width="1440" height="878" />
     </state>
     <state x="385" y="212" width="670" height="676" key="search.everywhere.popup/0.22.1440.878@0.22.1440.878" timestamp="1592589295929" />
-    <state x="385" y="212" width="670" height="676" key="search.everywhere.popup/1440.22.2560.1058/0.22.1440.878@0.22.1440.878" timestamp="1592676378850" />
+    <state x="385" y="212" width="670" height="676" key="search.everywhere.popup/1440.22.2560.1058/0.22.1440.878@0.22.1440.878" timestamp="1592682116279" />
   </component>
 </project>
