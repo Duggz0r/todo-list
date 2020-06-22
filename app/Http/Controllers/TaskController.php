@@ -11,7 +11,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $currentTasks = Task::where('archive', false)->get();
+        $currentTasks = Task::where('archive', false)->orderBy('due_date', 'ASC')->get();
 
         $categories = Categories::all();
 
@@ -87,6 +87,17 @@ class TaskController extends Controller
         $task->save();
 
         return redirect()->route('current-tasks');
+    }
+
+    public function updateCategory(Request $request, $taskId)
+    {
+        $task = Task::where('id', $taskId)->first();
+
+        $task->category_id = $request->category;
+
+        $task->save();
+
+        return response('Update Successfull', '200');
     }
 
     public function archive($taskId)

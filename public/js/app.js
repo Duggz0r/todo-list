@@ -1940,6 +1940,59 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -1955,8 +2008,20 @@ __webpack_require__.r(__webpack_exports__);
       "default": []
     }
   },
-  mounted: function mounted() {
-    console.log('Component mounted.');
+  data: function data() {
+    return {
+      pendingTasks: this.pendingTasks,
+      inprogressTasks: this.inprogressTasks,
+      completeTasks: this.completeTasks
+    };
+  },
+  methods: {
+    onAdd: function onAdd(event, category) {
+      var id = event.item.getAttribute('data-id');
+      axios.patch('/edit/' + id, {
+        category: category
+      });
+    }
   }
 });
 
@@ -6404,7 +6469,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.draggable-list {\n    min-height: 100px;\n}\n/* Unfortunately @apply cannot be setup in codesandbox,\nbut you'd use \"@apply border opacity-50 border-blue-500 bg-gray-200\" here */\n.moving-card {\n    opacity: 0.5;\n    background: #F7FAFC;\n    border: 1px solid #4299e1;\n}\n", ""]);
+exports.push([module.i, "\n.draggable-list {\n    min-height: 100px;\n}\n", ""]);
 
 // exports
 
@@ -41865,59 +41930,163 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row" },
-    _vm._l(_vm.categories, function(category) {
-      return _c(
-        "div",
-        { staticClass: "col-md-4" },
-        [
-          _c("h5", [_vm._v(_vm._s(category.title))]),
-          _vm._v(" "),
-          _c(
-            "draggable",
-            {
-              staticClass: "draggable-list pl-0",
-              attrs: {
-                tag: "ul",
-                group: "all-tasks",
-                "ghost-class": "moving-card",
-                list: _vm.pendingTasks,
-                animation: 200
-              }
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      { staticClass: "col-md-4" },
+      [
+        _c("h5", [_vm._v("Pending")]),
+        _vm._v(" "),
+        _c(
+          "draggable",
+          {
+            staticClass: "draggable-list pl-0",
+            attrs: {
+              list: _vm.pendingTasks,
+              tag: "ul",
+              group: "all-tasks",
+              "ghost-class": "moving-card",
+              animation: 200
             },
-            _vm._l(_vm.tasks, function(task) {
-              return _c("div", [
-                task.category_id == category.id
-                  ? _c("div", [
-                      _c("a", { attrs: { href: "edit_task/" + task.id } }, [
-                        _c("div", { staticClass: "card mb-3" }, [
-                          _c("div", { staticClass: "card-body" }, [
-                            _c("h5", [_vm._v(_vm._s(task.title))]),
-                            _vm._v(" "),
-                            _c("p", [
-                              _c("em", [_vm._v(_vm._s(task.description))])
-                            ]),
-                            _vm._v(" "),
-                            _c("p", [
-                              _vm._v("Due Date: " + _vm._s(task.due_date))
-                            ])
+            on: {
+              add: function($event) {
+                return _vm.onAdd($event, 1)
+              }
+            }
+          },
+          _vm._l(_vm.tasks, function(task) {
+            return _c("div", { key: task.id, attrs: { "data-id": task.id } }, [
+              task.category_id == 1
+                ? _c("div", [
+                    _c("a", { attrs: { href: "edit_task/" + task.id } }, [
+                      _c("div", { staticClass: "card mb-3" }, [
+                        _c("div", { staticClass: "card-body" }, [
+                          _c("h5", [_vm._v(_vm._s(task.title))]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _c("em", [_vm._v(_vm._s(task.description))])
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Due Date: " + _vm._s(task.due_date))
                           ])
                         ])
                       ])
                     ])
-                  : _vm._e()
-              ])
-            }),
-            0
-          )
-        ],
-        1
-      )
-    }),
-    0
-  )
+                  ])
+                : _vm._e()
+            ])
+          }),
+          0
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "col-md-4" },
+      [
+        _c("h5", [_vm._v("In Progress")]),
+        _vm._v(" "),
+        _c(
+          "draggable",
+          {
+            staticClass: "draggable-list pl-0",
+            attrs: {
+              list: _vm.inprogressTasks,
+              tag: "ul",
+              group: "all-tasks",
+              "ghost-class": "moving-card",
+              animation: 200
+            },
+            on: {
+              add: function($event) {
+                return _vm.onAdd($event, 2)
+              }
+            }
+          },
+          _vm._l(_vm.tasks, function(task) {
+            return _c("div", { key: task.id, attrs: { "data-id": task.id } }, [
+              task.category_id == 2
+                ? _c("div", [
+                    _c("a", { attrs: { href: "edit_task/" + task.id } }, [
+                      _c("div", { staticClass: "card mb-3" }, [
+                        _c("div", { staticClass: "card-body" }, [
+                          _c("h5", [_vm._v(_vm._s(task.title))]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _c("em", [_vm._v(_vm._s(task.description))])
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Due Date: " + _vm._s(task.due_date))
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                : _vm._e()
+            ])
+          }),
+          0
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "col-md-4" },
+      [
+        _c("h5", [_vm._v("Complete")]),
+        _vm._v(" "),
+        _c(
+          "draggable",
+          {
+            staticClass: "draggable-list pl-0",
+            attrs: {
+              list: _vm.completeTasks,
+              tag: "ul",
+              group: "all-tasks",
+              "ghost-class": "moving-card",
+              animation: 200
+            },
+            on: {
+              add: function($event) {
+                return _vm.onAdd($event, 3)
+              }
+            }
+          },
+          _vm._l(_vm.tasks, function(task) {
+            return _c("div", { key: task.id, attrs: { "data-id": task.id } }, [
+              task.category_id == 3
+                ? _c("div", [
+                    _c("a", { attrs: { href: "edit_task/" + task.id } }, [
+                      _c("div", { staticClass: "card mb-3" }, [
+                        _c("div", { staticClass: "card-body" }, [
+                          _c("h5", [_vm._v(_vm._s(task.title))]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _c("em", [_vm._v(_vm._s(task.description))])
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Due Date: " + _vm._s(task.due_date))
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                : _vm._e()
+            ])
+          }),
+          0
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
